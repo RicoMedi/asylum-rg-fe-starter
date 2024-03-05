@@ -34,13 +34,22 @@ function RenderLandingPage(props) {
       {/* Graphs Section: Add code here for the graphs section for your first ticket */}
       {/* <div className="graphs-section"> */}
       <div className="graphs-section">
-        <img src={GrantRatesByOfficeImg} alt="bar chart" />
-        <p>Search Grant Rates By Office</p>
-        <img src={GrantRatesByNationalityImg} alt="pie chart" />
-        <p>Search Grant Rates By Nationality</p>
-        <img src={GrantRatesOverTimeImg} alt="line chart" />
-        <p>Search Grant Rates Over Time</p>
+        <div className="content-box">
+          <img src={GrantRatesByOfficeImg} alt="bar chart" />
+          <p>Search Grant Rates By Office</p>
+        </div>
+
+        <div>
+          <img src={GrantRatesByNationalityImg} alt="pie chart" />
+          <p>Search Grant Rates By Nationality</p>
+        </div>
+
+        <div>
+          <img src={GrantRatesOverTimeImg} alt="line chart" />
+          <p>Search Grant Rates Over Time</p>
+        </div>
       </div>
+
       <div className="view-more-data-btn-container">
         <Button
           type="default"
@@ -67,9 +76,36 @@ function RenderLandingPage(props) {
           </h3>
         </div>
       </div>
-      <div>
+      <div className="bottom-section">
         {/* Bottom Section: Add code here for the graphs section for your first ticket */}
         {/* <div className="bottom-section">*/}
+        <h1>Systemic Disparity Insights</h1>
+        <div className="bottom-section-container">
+          <div className="container">
+            <h2>36%</h2>
+            <h3>
+              By the end of the Trump administration, the average asylum office
+              grant rate had fallen 36 percent from an average of 44 percent in
+              fiscal year 2016 to 28 percent in fiscal year 2020.
+            </h3>
+          </div>
+          <div className="container">
+            <h2>5%</h2>
+            <h3>
+              The New York asylum office grant rate dropped to 5 percent in
+              fiscal year 2020.
+            </h3>
+          </div>
+          <div className="container">
+            <h2>6x Lower</h2>
+            <h3>
+              Between fiscal year 2017 and 2020, the New York asylum office’s
+              average grant rate was six times lower than the San Francisco
+              asylum office.
+            </h3>
+          </div>
+        </div>
+
         <p onClick={() => scrollToTop()} className="back-to-top">
           Back To Top ^
         </p>
