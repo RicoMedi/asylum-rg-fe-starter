@@ -15,6 +15,10 @@ import { colors } from '../../../styles/data_vis_colors';
 import ScrollToTopOnMount from '../../../utils/scrollToTopOnMount';
 
 const { background_color } = colors;
+const url1 = `${process.env.REACT_APP_URl1}/fiscalsummary`;
+console.log(url1);
+const url2 = `${process.env.REACT_APP_URl1}/citizenshipSummary`;
+console.log(url2);
 
 function GraphWrapper(props) {
   const { set_view, dispatch } = props;
@@ -52,14 +56,14 @@ function GraphWrapper(props) {
   }
   function updateStateWithNewData(years, view, office, stateSettingCallback) {
     if (office === 'all' || !office) {
-      const fiscalSummaryRequest = axios.get(process.env.REACT_APP_URl1, {
+      const fiscalSummaryRequest = axios.get(url1, {
         params: {
           from: years[0],
           to: years[1],
         },
       });
 
-      const citizenshipSummaryRequest = axios.get(process.env.REACT_APP_URl2, {
+      const citizenshipSummaryRequest = axios.get(url2, {
         params: {
           from: years[0],
           to: years[1],
