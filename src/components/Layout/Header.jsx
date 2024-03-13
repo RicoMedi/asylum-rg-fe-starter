@@ -3,10 +3,14 @@ import { Image } from 'antd';
 import { Link } from 'react-router-dom';
 import Logo from '../../styles/Images/WhiteLogo.png';
 import { colors } from '../../styles/data_vis_colors';
-
+import { useAuth0 } from '@auth0/auth0-react';
+import { LoginButton } from '../common/LoginBtn';
+import { SignupButton } from '../common/SignUpBtn';
+import { LogoutButton } from '../common/LogoutBtn';
 const { primary_accent_color } = colors;
 
 function HeaderContent() {
+  const { isAuthenticated } = useAuth0();
   return (
     <div
       style={{
@@ -39,6 +43,17 @@ function HeaderContent() {
         >
           Graphs
         </Link>
+        {!isAuthenticated && (
+          <>
+            <SignupButton />
+            <LoginButton />
+          </>
+        )}
+        {isAuthenticated && (
+          <>
+            <LogoutButton />
+          </>
+        )}
       </div>
     </div>
   );
