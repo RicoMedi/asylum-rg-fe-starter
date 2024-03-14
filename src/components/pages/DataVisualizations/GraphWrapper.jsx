@@ -15,9 +15,9 @@ import { colors } from '../../../styles/data_vis_colors';
 import ScrollToTopOnMount from '../../../utils/scrollToTopOnMount';
 
 const { background_color } = colors;
-const url1 = `${process.env.REACT_APP_URl1}/fiscalsummary`;
+const url1 = `https://hrf-asylum-be-b.herokuapp.com/cases/fiscalsummary`;
 console.log(url1);
-const url2 = `${process.env.REACT_APP_URl1}/citizenshipSummary`;
+const url2 = `https://hrf-asylum-be-b.herokuapp.com/cases/citizenshipSummary`;
 console.log(url2);
 
 function GraphWrapper(props) {

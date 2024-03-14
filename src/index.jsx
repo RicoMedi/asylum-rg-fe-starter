@@ -24,6 +24,8 @@ import reducer from './state/reducers';
 import { colors } from './styles/data_vis_colors';
 import { Auth0ProviderWithNavigate } from '../src/components/pages/Auth0/auth0-provider-with-navigate';
 import { Profile } from './components/pages/Auth0/Profile';
+import { useAuth0 } from '@auth0/auth0-react';
+import Loader from './components/common/Loader';
 require('dotenv').config();
 const { primary_accent_color } = colors;
 
@@ -45,6 +47,15 @@ ReactDOM.render(
 
 export function App() {
   const { Footer, Header } = Layout;
+  const { isLoading } = useAuth0();
+
+  if (isLoading) {
+    return (
+      <div className="page-layout">
+        <Loader />
+      </div>
+    );
+  }
   return (
     <Layout>
       <Header

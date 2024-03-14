@@ -9,25 +9,27 @@ export const Profile = () => {
   }
 
   return (
-    <div className="content-layout">
+    <div className="content_layout">
       <div>
-        <h1 id="page-title" className="content__title">
-          Profile Page
-        </h1>
         <div className="content__body">
-          <p id="page-description"></p>
+          <h1 id="page-title" className="content_title">
+            User Profile
+          </h1>
           <div className="profile-grid">
-            <div className="profile__header">
+            <div className="profile_header">
               <div>
                 <img
                   src={user.picture}
                   alt="Profile"
-                  className="profile__avatar"
+                  className="profile_avatar"
                 />
               </div>
-              <div className="profile__headline">
-                <h2 className="profile__title">{user.name}</h2>
-                <span className="profile__description">{user.email}</span>
+              <div>
+                <h2 className="profile_title">Name: {user.name}</h2>
+                <h3 className="profile_title"> Nickname: {user.nickname}</h3>
+              </div>
+              <div>
+                <span className="profile_title">Email: {user.email}</span>
               </div>
             </div>
             <div className="profile__details">
@@ -36,10 +38,10 @@ export const Profile = () => {
                 code={JSON.stringify(user, null, 2)}
               />
             </div>
-            <span>
-              <strong>Only authenticated users can access this page.</strong>
-            </span>
           </div>
+          <span className="warning">
+            <strong>Only authenticated users can access this page.</strong>
+          </span>
         </div>
       </div>
     </div>

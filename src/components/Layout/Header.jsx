@@ -7,10 +7,12 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { LoginButton } from '../common/LoginBtn';
 import { SignupButton } from '../common/SignUpBtn';
 import { LogoutButton } from '../common/LogoutBtn';
+
 const { primary_accent_color } = colors;
 
 function HeaderContent() {
   const { isAuthenticated } = useAuth0();
+
   return (
     <div
       style={{
@@ -23,15 +25,22 @@ function HeaderContent() {
     >
       <div className="hrf-logo">
         <a href="https://www.humanrightsfirst.org/">
-          <Image width={150} src={Logo} preview={false} alt="HRF logo white" />
+          <Image width={200} src={Logo} preview={false} alt="HRF logo white" />
         </a>
       </div>
-      <div>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '10rem',
+        }}
+      >
         <Link
           to="/"
           style={{
             color: '#E2F0F7',
-            paddingRight: '7rem',
+            paddingRight: '5rem',
             fontSize: '1.4rem',
           }}
         >
@@ -39,19 +48,45 @@ function HeaderContent() {
         </Link>
         <Link
           to="/graphs"
-          style={{ color: '#E2F0F7', paddingRight: '30px', fontSize: '1.4rem' }}
+          style={{ color: '#E2F0F7', paddingRight: '5rem', fontSize: '1.4rem' }}
         >
           Graphs
         </Link>
         {!isAuthenticated && (
           <>
-            <SignupButton />
-            <LoginButton />
+            <div
+              style={{
+                paddingRight: '1rem',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
+              <SignupButton />
+            </div>
+
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
+              <LoginButton />
+            </div>
           </>
         )}
         {isAuthenticated && (
           <>
-            <LogoutButton />
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
+              <LogoutButton />
+            </div>
           </>
         )}
       </div>

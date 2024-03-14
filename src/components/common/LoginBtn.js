@@ -13,7 +13,7 @@ export const LoginButton = () => {
   };
 
   return (
-    <button className="button__login" onClick={handleLogin}>
+    <button className="button_login" onClick={handleLogin}>
       Log In
     </button>
   );
